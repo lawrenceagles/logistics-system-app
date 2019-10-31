@@ -18,13 +18,13 @@ import Layout from './components/Layout'
 function App() {
   return (
     <>
-      <Switch>
-        <Layout>
-          <Route exact path="login" component={ Login } />
-          <Route exact path="register" component={ Register } />
+      <Layout>
+        <Switch>
+          <Route exact path="/login" component={ Login } />
+          <Route exact path="/register" component={ Register } />
           <Route component={ Error } />
-        </Layout>
-      </Switch>
+        </Switch>
+      </Layout>
     </>
   )
 }
