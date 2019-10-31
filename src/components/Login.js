@@ -20,7 +20,7 @@ const Login = () => {
                 <article className="col-10 mx-auto">
                     <h1 className="text-center py-4">Welcome Login</h1>
                     <form>
-                        <Field name="identifier" component={ renderInput } label="Enter Identifier" fieldType={ "text" } />
+                        <Field name="identifier" component={ renderInput } label="Enter Username" fieldType={ "text" } />
                         <Field name="password" component={ renderInput } label="Enter password" fieldType={ "password" } />
                         
                         <div className="col-6 mx-auto py-2">
