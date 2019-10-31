@@ -1,8 +1,9 @@
 import { combineReducers } from 'redux'
-import { Register } from './register'
-import { Login } from './login'
+import registrationReducer from './registrationReducer'
+import loginReducer from './loginReducer'
 
 
 export default combineReducers({
-
+    registeration: registrationReducer,
+    login: loginReducer
 })
