@@ -1,6 +1,10 @@
 import React from 'react'
 import { Field, reduxForm } from 'redux-form'
 
+// redux
+import { connect } from 'react-redux'
+import { loginAction } from '../actions'
+
 
 const renderInput = ({ input, label, meta:{ touched, error }, type, placeholder }) => { // render input fields
 
@@ -13,10 +17,21 @@ const renderInput = ({ input, label, meta:{ touched, error }, type, placeholder 
     )
 }
 
-const Login = ({ handleSubmit }) => {
+const Login = ({ handleSubmit, loginAction, history, errorMessage }) => {
 
-    const submitForm = (formValues) => {
-        console.log("form values", formValues)
+    const handleError = () => {
+        if (errorMessage) {
+          return (
+            <div className="text-danger">
+              { errorMessage }
+            </div>
+          );
+        }
+      }
+
+    const submitForm = (values) => {
+        console.log("form values", values)
+        loginAction(values, history);
     }
     
     return (
@@ -33,6 +48,8 @@ const Login = ({ handleSubmit }) => {
                             <button type="submit" className="btn btn-success btn-block"><strong>Login</strong></button>
                         </div>
                     </form>
+
+                    <div className="text-center">{ handleError() }</div>
                 </article>
                 
             </div>
@@ -56,8 +73,13 @@ const validate = (formValues) => {// validate form fields
     return errors
 }
 
+const mapStateToProps = (state) => {
+    return { errorMessage: state.auth.error }
+}
 
-export default reduxForm({
+const loginForm = reduxForm({
     form: 'loginForm',
     validate
   })(Login)
+
+  export default connect(mapStateToProps, { loginAction })(loginForm)

@@ -6,6 +6,6 @@ import loginReducer from './loginReducer'
 
 export default combineReducers({
     registeration: registrationReducer,
-    login: loginReducer,
+    auth: loginReducer,
     form: formReducer
 })
