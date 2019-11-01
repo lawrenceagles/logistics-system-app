@@ -1,5 +1,6 @@
 
 import { AUTHENTICATED, UNAUTHENTICATED, AUTHENTICATION_ERROR } from '../actions/types';
+
 export default (state = {}, action) =>  {
     
     switch(action.type){
