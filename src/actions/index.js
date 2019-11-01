@@ -1,8 +1,5 @@
 import logisticsLogin from '../api/logistics'
-// import { AUTHENTICATED, AUTHENTICATION_ERROR, UNAUTHENTICATED } from './types'
-export const AUTHENTICATED = 'authenticated_user'
-export const UNAUTHENTICATED = 'unauthenticated_user'
-export const AUTHENTICATION_ERROR = 'authentication_error'
+import { AUTHENTICATED, AUTHENTICATION_ERROR, UNAUTHENTICATED } from './types'
 
 export function loginAction({ username: identifer, password }, history) { // destructuring username as identifer and password from form values
     return async dispatch => {

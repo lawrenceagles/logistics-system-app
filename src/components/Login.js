@@ -30,7 +30,6 @@ const Login = ({ handleSubmit, loginAction, history, errorMessage }) => {
       }
 
     const submitForm = (values) => {
-        console.log("form values", values)
         loginAction(values, history);
     }
     
@@ -69,7 +68,6 @@ const validate = (formValues) => {// validate form fields
         errors.password = "Please enter a password"
     }
 
-    console.log("validating", errors)
     return errors
 }
 
